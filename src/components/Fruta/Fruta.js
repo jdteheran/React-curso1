@@ -1,9 +1,14 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 class Fruta extends React.Component {
 
     state = {
         cantidad: 0
+    }
+
+    componentWillUnmount() {
+        console.log('Ultima voluntad de fruta');
     }
 
     agregar = () => {
@@ -52,6 +57,10 @@ class Fruta extends React.Component {
     render() {
         return (
             <div>
+
+
+                <Link to={'/hola'}>Vamonos para CheckIn</Link>
+
                 <h3>{this.props.name}</h3>
                 <p>Precio: {this.props.price}</p>
                 <p>Cantidad: {this.state.cantidad} </p>
